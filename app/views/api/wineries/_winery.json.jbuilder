@@ -1,0 +1,12 @@
+json.id winery.id
+json.region winery.region
+json.name	winery.name
+json.address winery.address
+json.phone_number winery.phone_number
+json.tasting_fee winery.tasting_fee
+json.description winery.description
+json.varietal winery.varietal
+json.link winery.link
+json.appt_needed winery.appt_needed
+json.hours winery.hours
+json.city winery.city
