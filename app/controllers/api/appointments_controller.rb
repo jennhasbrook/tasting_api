@@ -33,11 +33,11 @@ class Api::AppointmentsController < ApplicationController
 	def update
 
 		@appointment = Appointment.find_by(id: params[:id])
-		@appointment.id = params[:id]
+		# @appointment.id = params[:id]
 		@appointment.user_id = params[:user_id] || @appointment.user_id
 		@appointment.winery_id = params[:winery_id] || @appointment.winery_id
 		@appointment.appt_date = params[:appt_date] || @appointment.appt_date
-		@appt_date = params[:appt_date] || @appointment.appt_date
+
 
 		if @appointment.save
 			render 'show.json.jbuilder'
