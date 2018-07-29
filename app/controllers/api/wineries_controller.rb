@@ -59,7 +59,7 @@ class Api::WineriesController < ApplicationController
 
 
   def show
-
+    puts current_user
     @winery = Winery.find_by(id: params[:id])
     render 'show.json.jbuilder'
   end

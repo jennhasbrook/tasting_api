@@ -21,5 +21,5 @@ Rails.application.routes.draw do
     delete '/appointments/:id' => 'appointments#destroy'
 
   end
-    post 'user_token' => 'user_token#create'
+  post 'user_token' => 'user_token#create'
 end

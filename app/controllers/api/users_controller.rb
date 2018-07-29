@@ -6,6 +6,7 @@ class Api::UsersController < ApplicationController
 		@user.name = params[:name] || @user.name
 		@user.email = params[:email] || @user.email
 		@user.phone_number = params[:phone_number] || @user.phone_number
+		# @user.password = params[:password] || @user.password
 
 		if @user.save
 			render 'show.json.jbuilder'
@@ -17,7 +18,7 @@ class Api::UsersController < ApplicationController
 
 
 	def create
-    @user = User.new(
+    @user = User.create(
       name: params[:name],
       email: params[:email],
       phone_number: params[:phone_number],

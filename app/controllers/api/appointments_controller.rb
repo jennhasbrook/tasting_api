@@ -18,7 +18,7 @@ class Api::AppointmentsController < ApplicationController
 	def create
 		@appointment = Appointment.new(
 			winery_id: params[:winery_id],
-			user_id: params[:user_id],
+			user_id: current_user.id,
 			appt_date:  params[:appt_date]
 			)
 		if @appointment.save
