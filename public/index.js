@@ -4,7 +4,7 @@ var HomePage = {
   template: "#home-page",
   data: function() {
     return {
-      message: "Home Page"
+      user:{}
     };
   },
   created: function() {},
