@@ -65,8 +65,8 @@ var WineryShow = {
             this.errors = error.response.data.errors;
           }.bind(this)
         );
-    }
-  
+    
+  }
 },
 
   computed: {}
@@ -79,7 +79,7 @@ var UsersShow = {
     return {
       message: "User show page!",
       user: {},
-      id: ""
+      appt_date: ""
     };
   },
   created: function() {
@@ -97,35 +97,20 @@ var UsersShow = {
       }.bind(this))
     },
 
-      deleteUser: function() {
-        var params = {
-        id: this.id },
-        axios.delete("/api/users/" + this.$route.params.id).then(function(response){
-        console.log(response.data.message);
-        var index = this.user.indexOf(user);
-      }.bind(this));
-
-    }
+    submit: function(appointment) {
+      var params = {
     
-// methods: {
-//     submit: function() {
-//       var params = {
-//         id: this.id,
-//         name: this.name,
-//         email: this.email,
-//         phone_number: this.phone_number
-//       };
-//       axios.patch("api/users/" + this.$route.params.id, params).then(function(response) {
-//         router.push("/users/" + this.$route.params.id);
-//       }.bind(this))
-//       .catch(function(error) {
-//         this.errors = error.response.data.errors;
-//       }.bind(this));
-//       },
-  
-
-
-
+        appt_date: this.appt_date
+      };
+      axios.patch("api/appointments/" + appointment.id, params).then(function(response) {
+        var index = this.user.appointments.indexOf(appointment);
+        console.log(response.data)
+        this.user.appointments[index].appt_date = response.data.appt_date
+      }.bind(this))
+      .catch(function(error) {
+        this.errors = error.response.data.errors;
+      }.bind(this));
+      },
 
   },
   computed: {}
@@ -248,22 +233,6 @@ var UsersEdit = {
   computed: {}
 };
 
-
-
-
-
-
-// var HomePage = {
-//   template: "#home-page",
-//   data: function() {
-//     return {
-//       message: "Welcome to Vue.js!"
-//     };
-//   },
-//   created: function() {},
-//   methods: {},
-//   computed: {}
-// };
 
 var router = new VueRouter({
   routes: [

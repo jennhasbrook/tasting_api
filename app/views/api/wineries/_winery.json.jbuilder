@@ -10,3 +10,4 @@ json.link winery.link
 json.appt_needed winery.appt_needed
 json.hours winery.hours
 json.city winery.city
+json.image winery.image

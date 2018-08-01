@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -6,86 +6,313 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.js"></script>
+
+
+    <!-- ADDED!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+
+    <!-- Bootstrap v4.1.1 CSS via CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+
+    <!-- Plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 -->
+
+    <!-- Theme style -->
+    <link href="assets/css/theme-style.min.css" rel="stylesheet">
+
+    <!--Your custom colour override-->
+    <link href="#" id="colour-scheme" rel="stylesheet">
+
+    <!-- Your custom override -->
+    <link href="assets/css/custom-style.css" rel="stylesheet">
+
+
+
+    <!-- Google fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Rambla:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,400,700' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/retina.js/1.3.0/retina.min.js"></script>
+
+    <!-- END!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+
   
     <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script>
   </head>
   <body>
     <div id="vue-app">
-      <div classs="container"> 
+      <!-- @plugin: page loading indicator, delete to remove loader -->
+      <div class="page-loader" data-toggle="page-loader"></div>
+      <!-- ======== @Region: #header ======== -->
+      <div id="header">
+
+        <!--Header upper region-->
+        <div class="header-upper">
+          <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.htm) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
+          <div class="header-inner container">
+            <!--user menu-->
+            <div class="header-block-flex order-1 mr-auto">
+              <nav class="nav nav-sm header-block-flex">
+              </nav>
+              <div class="header-divider header-divider-sm">
+              </div>
+              <!--language menu-->
+              <div class="dropdown dropdowns-no-carets">
+                <a href="#en" class="nav-link text-xs p-0 dropdown-toggle ml-1" data-toggle="dropdown"><i class="flag-icon flag-icon-gb"></i></a>
+
+              </div>
+            </div>
+            <!--social media icons-->
+            <div class="nav nav-icons header-block order-12">
+              <!--@todo: replace with company social media details-->
+              <a href="#" class="nav-link"> <i class="fab fa-twitter-square icon-1x"></i> <span class="sr-only">Twitter</span> </a>
+              <a href="#" class="nav-link"> <i class="fab fa-facebook-square icon-1x"></i> <span class="sr-only">Facebook</span> </a>
+              <a href="#" class="nav-link"> <i class="fab fa-linkedin icon-1x"></i> <span class="sr-only">Linkedin</span> </a>
+              <a href="#" class="nav-link"> <i class="fab fa-google-plus-square icon-1x"></i> <span class="sr-only">Google plus</span> </a>
+            </div>
+          </div>
+        </div>
+        <div data-toggle="sticky">
+
+          <!--Header search region - hidden by default -->
+          <div class="header-search collapse" id="search">
+            <form class="search-form container">
+              <input type="text" name="search" class="form-control search" value="" placeholder="Search">
+              <button type="button" class="btn btn-link"><span class="sr-only">Search </span><i class="fa fa-search fa-flip-horizontal search-icon"></i></button>
+              <button type="button" class="btn btn-link close-btn" data-toggle="search-form-close"><span class="sr-only">Close </span><i class="fa fa-times search-icon"></i></button>
+            </form>
+          </div>
+
+          <!--Header & Branding region-->
+          <div class="header">
+            <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.html) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
+            <div class="header-inner container">
+              <!--branding/logo -->
+              <div class="header-brand">
+                <a class="header-brand-text" href="index.html" title="Home">
+                  <h1 class="h2">
+                    <span class="header-brand-text-alt">SIP</span><span class="header-brand-text-alt"></span>
+                  </h1>
+                </a>
+                <div class="header-divider d-none d-lg-block"></div>
+                <div class="header-slogan d-none d-lg-block">Wine to your taste</div>
+              </div>
+              <!-- other header content -->
+              <div class="header-block order-12">
+                <!--Search trigger -->
+                <a href="#search" class="btn btn-icon btn-link header-btn float-right order-11" data-toggle="search-form" data-target=".header-search"><i class="fa fa-search fa-flip-horizontal search-icon"></i></a>          
+              </div>
+              <div class="navbar navbar-expand-md navbar-static-top">
+                <!--everything within this div is collapsed on mobile-->
+                <div class="navbar-main collapse">
+                  <!--main navigation-->
+                  <ul class="nav navbar-nav navbar-nav-stretch float-lg-right dropdown-effect-fade">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link" id="pages-drop"  >Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="/#/wineries" class="nav-link" id="pages-drop"  >Wineries</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="/#/login" class="nav-link" id="pages-drop"  >Login</a>
+                    <li class="nav-item">
+                        <a href="/#/logout" class="nav-link" id="pages-drop"  >Logout</a>
+                    </li>
+                      <li class="nav-item">
+                      <a href="/#/signup" class="nav-link" id="pages-drop"  >Signup</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link" id="pages-drop"  >My Info</a>
+                    </li>
+                  </ul>
+                </div>
+                <!--/.navbar-collapse -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container"> 
+
+        
         <router-view></router-view>
       </div>
     </div>
     
+
+
+<!-- ADDED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+  <!-- ======== @Region: #footer ======== -->
+   <footer id="footer" class="p-0">
+    <div class="container pt-6 pb-5">
+      <div class="row">
+        <div class="col-md-4">
+          @todo: replace with company contact details
+          <h4 class="text-uppercase text-white">
+            Contact Us
+          </h4>
+          <address>
+              <ul class="list-unstyled">
+                <li>
+                  <abbr title="Phone"><i class="fa fa-phone fa-fw"></i></abbr>
+                  019223 8092344
+                </li>
+                <li>
+                  <abbr title="Email"><i class="fa fa-envelope fa-fw"></i></abbr>
+                  info@appstraptheme.com
+                </li>
+                <li>
+                  <abbr title="Address"><i class="fa fa-home fa-fw"></i></abbr>
+                  Sunshine House, Sunville. SUN12 8LU.
+                </li>
+              </ul>
+            </address>
+        </div>
+
+        <div class="col-md-4">
+          <h4 class="text-uppercase text-white">
+            About Us
+          </h4>
+          <p>Making the web a prettier place one template at a time! We make beautiful, quality, responsive Drupal & web templates!</p>
+        </div>
+
+        <div class="col-md-4">
+          <h4 class="text-uppercase text-white">
+            Newsletter
+          </h4>
+          <p>Stay up to date with our latest news and product releases by signing up to our newsletter.</p>
+          <!--@todo: replace with mailchimp code
+          <form>
+            <div class="input-group">
+              <label class="sr-only" for="email-field">Email</label>
+              <input type="text" class="form-control" id="email-field" placeholder="Email">
+              <span class="input-group-append">
+                  <button class="btn btn-primary" type="button">Go!</button>
+                </span>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+    <hr class="my-0 hr-blank op-2" />
+    <!--@todo: replace with company copyright details-->
+
+  </footer> -->
+
+
+<!--jQuery 3.3.1 via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Popper 1.14.3 via CDN, needed for Bootstrap Tooltips & Popovers -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+  <!-- Bootstrap v4.1.1 JS via CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+
+  <!-- JS plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 To disable this and load plugin assets manually simple add data-plugins-manual=true to the body tag -->
+
+  <!--Custom scripts & AppStrap API integration -->
+  <script src="assets/js/custom-script.js"></script>
+  <!--AppStrap scripts mainly used to trigger libraries/plugins -->
+  <script src="assets/js/script.min.js"></script>
+
+
+
+
+<!-- END!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+
+
+
+
   </body>
 </html>
 
 <template id="home-page">
   <div class="vue-component">
 
-    <h1>{{message }}</h1>
-
+    <h1>SIP logo here</h1>
+    <img src=" https://images.unsplash.com/photo-1470158499416-75be9aa0c4db?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bfd8a98cc441ac2ac4a05ccea5a144cb&auto=format&fit=crop&w=668&q=80" alt="Photo of wineglasses and sunset" style="width:372px;height:423px">
+    <h3> Welcome to SIP. </h3>
+   <p> 
+    This is an intro I still need to write. It is going to explain what the website does. Content management is really important.  This is an intro I still need to write. It is going to explain what the website does. Content management is really important.This is an intro I still need to write. It is going to explain what the website does. Content management is really important.This is an intro I still need to write. It is going to explain what the website does. Content management is really important.This is an intro I still need to write. It is going to explain what the website does. Content management is really important.</p> 
+    Check out our Oregon wineries and begin your adventure...into Oregon Wine Country
+    <br>
+    <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@chiro?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from photo-nic.co.uk nic"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px">photo-nic.co.uk nic</span></a>
     <div id="vue-app">
-      <a href="/#/signup">Signup</a>
+      <!--       <a href="/#/signup">Signup</a>
       <a href="/#/login">Login</a>
-      <a href="/#/logout">Logout</a>
+      <a href="/#/logout">Logout</a> -->
       <router-view></router-view>
     </div>
-
-
-
   </div>
 </template>
 
 <template id="wineries-index">>
   <div class="vue-component">
+    <div class="row pricing-stack">
+      <div v-for="winery in wineries" class="col-md-4">
+        <div class="card bg-shadow text-center border-0">
+          <h4 class="card-title py-3 my-0 text-shadow op-8">
+            {{ winery.region}}
+          </h4>
+          <p class="price-banner bg-light shadow-sm card-body-overlap"> <span class="price-digits">{{winery.name}}</span>
+          </p>
+          <div class="card-body">
+            <ul class="list-unstyled text-sm text-black-50">
 
-    <h1>{{message}}</h1>
-    <div class="row">
- 
-      <div v-for="winery in wineries">
-        <h2>Winery: {{winery.name}}</h2>
-        <h4>Region: {{winery.region}} </h4>
-        <p>City: {{winery.city}} </p>
-      </div>   
-     
-  </div>
+              <li> <img :src="winery.image" alt="Photo of winery" style="width:380px;height:250px"></li>
+            </ul>
 
-  </div>
+            <a v-bind:href="'/#/wineries/' + winery.id" class="btn btn-primary">Tasting & Winery info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>   
 </template>
 
 <template id="winery-show">
-  <div class="vue-component">
+  <div class="vue-component"> 
 
-    <h1>{{message}}</h1>
-  <div>
-    <h2>{{ winery.name }}</h2>
-    <h4>{{ winery.region }}</h4>
-    <p>{{ winery.address }} </p>
-    <p>{{ winery.phone_number }}</p>
-    <p>{{ winery.link }}</p>
-    <p>{{ winery.description }}</p>
-    <p>Varietals: {{ winery.varietal }}</p>
-    <p>Tasting Fee: {{ winery.tasting_fee }}</p>
-    <p>An appointment is needed: {{ winery.appt_needed }}</p>
-    <p>Hours: {{ winery.hours }}</p>
-    <br>
-  </div>
-    <!-- Figure out how to add google map of location -->
-  <h2>Make a tasting appointment with this winery during their winery hours: </h2>
-  <p>  {{winery.hours }} </p>
- 
-  <div>
-    Appt Date and Time: <input type="datetime-local" v-model="appt_date">
-    <br>
-    <br>
-   <button class="btn btn-primary" v-on:click="submit()">Create Tasting Appointment</button>
-   <br>
-    <br>
+
+    <div>
+      <h2>{{ winery.name }}</h2>
+      <h4>{{ winery.region }}</h4>
+      <p>{{ winery.address }} </p>
+      <p>{{ winery.phone_number }}</p>
+      <p>{{ winery.link }}</p>
+      <img :src="winery.image" alt="Photo of winery" style="width:733px;height:466px">
+      <p><i>  {{ winery.name }}</i></p>
+      <p> {{ winery.description }}</p>
+      <br>
+      <p>Varietals: {{ winery.varietal }}</p>
+      <br>
+      <p>Tasting Fee: ${{ winery.tasting_fee }}0</p>
+      <!--<p>An appointment is needed: {{ winery.appt_needed }}</p> -->
+      <p>Hours: {{ winery.hours }}</p>
+
+      <br>
     </div>
+    
+    <h4>Make a tasting appointment with this winery during their winery hours: </h4>
+    <p>  {{winery.hours }} </p>
    
-  </div>
-
+    <div>
+      Appt Date and Time: <input type="datetime-local" v-model="appt_date">
+      <br>
+      <br>
+     <button class="btn btn-primary" v-on:click="submit()">Create Tasting Appointment</button>
+     <br>
+     <br>
+     <br>
+    </div>
   </div>
 </template>
 
@@ -99,30 +326,28 @@
       <p> User phone number: {{ user.phone_number }} </p>
        <a v-bind:href="'/#/users/' + user.id + '/edit'">Edit</a>
        <br>
-      <!--  <a v-bind:href="'/#/users/' + user.id + '/destroy'">Cancel my account</a> -->
+       <br> 
 
-        <button v-on:click="deleteUser(user)">Delete my profile</button>
-     </div>
-      <br> 
-
-    <h2>Appointments scheduled for this user:</h2>
-    <div v-for="appointment in user.appointments">
+      <h2>Appointments scheduled for this user:</h2>
+      <div v-for="appointment in user.appointments">
  
-  <!--     <p>Winery: {{ appointment.winery_id }}</p> -->
-      <p> Winery name: {{ appointment.winery_name }}</p>
-      <p>Tasting info: {{ appointment.appt_date }}</p>
+        <p>Winery: {{ appointment.winery_id }}</p>
+        <p> Winery name: {{ appointment.winery_name }}</p>
+        <p>Tasting info: {{ appointment.appt_date }}</p>
 
-      <div class="form-group">
-       <label>Change Date and/or Time:</label> 
-       <input type="datetime-local" class="form-control" v-model="appointment.appt_date">
+        <div class="form-group">
+          <label>Change Date and/or Time:</label> 
+          <input type="datetime-local" class="form-control" v-model="appt_date">
 
-       <button class="btn btn-primary" v-on:click="submit()">Update Tasting Appointment</button>
-     </div>
+          <button class="btn btn-primary" v-on:click="submit(appointment)">Update Tasting Appointment</button>
+          <br>
+          <br>
+        </div>
 
-      <button
+        <button
        v-on:click="deleteAppointment(appointment)">Cancel this appointment</button>
  
-    </div>
+      </div>
   </div>
 </template>
 
@@ -200,19 +425,15 @@
       <label>Phone:</label> 
       <input type="text" class="form-control" v-model="phone_number">
     </div>
-<!--     <div class="form-group">
-      <label>Update Password:</label> 
-      <input type="text" class="form-control" v-model="password">
-    </div> -->
+
 
     <div>
       <button class="btn btn-primary" v-on:click="submit()">Submit</button>
      </div>
 
-     <button
-       v-on:click="deleteUser(user)">Delete my user profile entirely</button>
 
       <br> 
  
   </div>
 </template>
+ -->

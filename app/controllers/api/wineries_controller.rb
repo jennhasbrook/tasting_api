@@ -25,7 +25,7 @@ class Api::WineriesController < ApplicationController
   		@winery.description = params[:description] || @winery.description
   		@winery.appt_needed = params[:appt_needed] || @winery.appt_needed
   		@winery.hours = params[:hours] || @winery.hours
-  	
+  	  @winery.image = params[:image] || @winery.image
   		if winery.save
   			render 'show.json.jbuilder'
   		else
@@ -46,7 +46,8 @@ class Api::WineriesController < ApplicationController
       link: params[:link],
       description: params[:description],
       appt_needed: params[:appt_needed], 
-      hours: params[:hours] 
+      hours: params[:hours],
+      image: params[:image] 
       )
 
     if @winery.save
