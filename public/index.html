@@ -103,21 +103,22 @@
                   <!--main navigation-->
                   <ul class="nav navbar-nav navbar-nav-stretch float-lg-right dropdown-effect-fade">
                     <li class="nav-item">
-                      <a href="#" class="nav-link" id="pages-drop"  >Home</a>
+                      <a href="/#/" class="nav-link" id="pages-drop"  >Home</a>
                     </li>
                     <li class="nav-item">
                       <a href="/#/wineries" class="nav-link" id="pages-drop"  >Wineries</a>
                     </li>
-                    <li class="nav-item">
+                  
+                    <li v-if="!isLoggedIn()" class="nav-item">
                       <a href="/#/login" class="nav-link" id="pages-drop"  >Login</a>
-                    <li class="nav-item">
+                    <li v-if="isLoggedIn()" class="nav-item">
                         <a href="/#/logout" class="nav-link" id="pages-drop"  >Logout</a>
                     </li>
-                      <li class="nav-item">
+                      <li v-if="!isLoggedIn()" class="nav-item">
                       <a href="/#/signup" class="nav-link" id="pages-drop"  >Signup</a>
                     </li>
-                    <li class="nav-item">
-                      <a href="'/#/users/'+ user.id"class="nav-link" id="pages-drop"  >My Info</a>
+                    <li v-if="isLoggedIn()" class="nav-item">
+                      <a href="'/#/users/'+ user.id" class="nav-link" id="pages-drop"  >My Info</a>
                     </li>
                   </ul>
                 </div>

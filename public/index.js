@@ -169,7 +169,8 @@ var LoginPage = {
           axios.defaults.headers.common["Authorization"] =
             "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
-          router.push("/");
+          localStorage.setItem("user_id", response.data.user.id);
+          router.push("/wineries");
         })
         .catch(
           function(error) {
@@ -187,7 +188,8 @@ var LogoutPage = {
   created: function() {
     axios.defaults.headers.common["Authorization"] = undefined;
     localStorage.removeItem("jwt");
-    router.push("/");
+    localStorage.removeItem("user_id");
+    router.push("/login");
   }
 };
 
@@ -259,6 +261,14 @@ var app = new Vue({
     var jwt = localStorage.getItem("jwt");
     if (jwt) {
       axios.defaults.headers.common["Authorization"] = jwt;
+    }
+  },
+  methods: {
+    isLoggedIn: function(){
+      if(localStorage.getItem("jwt")) {
+        return true;
+      }
+      return false;
     }
   }
 });
