@@ -125,7 +125,7 @@
                       <a href="/#/signup" class="nav-link" id="pages-drop"  >Signup</a>
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link" id="pages-drop"  >My Info</a>
+                      <a href="'/users/' + user.id"   class="nav-link" id="pages-drop"  >My Info</a>
                     </li>
                   </ul>
                 </div>
@@ -236,19 +236,72 @@
 
 <template id="home-page">
   <div class="vue-component">
+    <div class="bg-dark">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-7 divider-diagonal divider-diagonal-r divider-dark" data-bg-img="https://images.unsplash.com/photo-1470158499416-75be9aa0c4db?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bfd8a98cc441ac2ac4a05ccea5a144cb&auto=format&fit=crop&w=668&q=80" alt="Wineglasses in sunset"></div>
 
-    <h1>SIP logo here</h1>
-    <img src=" https://images.unsplash.com/photo-1470158499416-75be9aa0c4db?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bfd8a98cc441ac2ac4a05ccea5a144cb&auto=format&fit=crop&w=668&q=80" alt="Photo of wineglasses and sunset" style="width:372px;height:423px">
-    <h3> Welcome to SIP. </h3>
+          <div class="col-lg-5 py-5">
+            <hr class="hr-lg mt-0 mb-2 w-10 ml-0 hr-primary" />
+            <h2 class="text-white text-uppercase mt-0 mb-5">
+              Taste: <span class="text-primary font-weight-bold">SIP</span>
+            </h2>
+            <div class="d-flex mb-3">
+              <div class="flex-fill text-grey">
+                <h4 class="font-weight-bold text-white mb-0 op-9" style="margin-left:70px">
+                  SIP makes wine tasting easy
+                </h4>
+                <br>
+                <p class="op-8 text-sm">so you can enjoy yourself. SIP allows you to book your tasting experience online and instantly. Organize your trip quickly and efficiently. SIP provides you with winery details, location, varietals and more! 
+                </p>
+              
+                <p class="op-8 text-sm">Let SIP be your guide to planning your next wine adventure. Find out about wineries in a particular region, schedule your tasting appointment, and map your route.</p>
+                <p>Share your tasting experience with your fellow travelers and avoid the numerous emails that accompany planning a trip. SIP is your one stop for your agenda, storing maps, winery info, payment confirmation and tasting appointment</p>
+                <p class="op-8 text-sm">SIP also provides access to restaurants, driving services and accomoddations in your selected wine region. Use SIP to plan your experiences in the wine region of your choice....all you need to do is get here!</p>
+              </div>
+            </div>
+   <!--          <div class="d-flex mb-3">
+              <i class="la la-check text-white icon-1x icon-sq rounded-circle bg-primary mr-3"></i>
+
+              <div class="flex-fill text-grey">
+                <h4 class="font-weight-bold text-white mb-0 op-9">
+                  Free Upgrades
+                </h4>
+                <p class="op-8 text-sm">Laoreet ratis saluto ulciscor. Damnum metuo occuro pagus qui refoveo sed ullamcorper volutpat. Accumsan causa dolus eros in nisl nulla roto vel.</p>
+              </div>
+            </div>
+            <div class="d-flex mb-3">
+              <i class="la la-check text-white icon-1x icon-sq rounded-circle bg-primary mr-3"></i>
+
+              <div class="flex-fill text-grey">
+                <h4 class="font-weight-bold text-white mb-0 op-9">
+                  99.9% Uptime
+                </h4>
+                <p class="op-8 text-sm">Commodo consectetuer elit fere jumentum nimis nutus pecus ratis vulputate. Bene brevitas ea odio oppeto ratis si torqueo virtus.</p>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
    <p> 
-    This is an intro I still need to write. It is going to explain what the website does. Content management is really important.  This is an intro I still need to write. It is going to explain what the website does. Content management is really important.This is an intro I still need to write. It is going to explain what the website does. Content management is really important.This is an intro I still need to write. It is going to explain what the website does. Content management is really important.This is an intro I still need to write. It is going to explain what the website does. Content management is really important.</p> 
-    Check out our Oregon wineries and begin your adventure...into Oregon Wine Country
+    
     <br>
-    <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@chiro?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from photo-nic.co.uk nic"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px">photo-nic.co.uk nic</span></a>
+ 
+    <p><img src="https://images.unsplash.com/photo-1491924778227-f225b115dd5f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9cf2d396b2e5cb94bc449e2d91412ffe&auto=format&fit=crop&w=1350&q=80" alt="Photo of wineglasses and sunset" style="width:395px;height:276px" alt="A bunch of corks" align="left" hspace="40"> Historically, wineries required a visitor call to schedule a tasting. Who has time for that? Without tasting appointments, wine drinkers may often spend their valuable time waiting while others enjoy their wine. </p> 
+   <p> SIP allows users to schedule tasting appointments with wineries online and immediately. Access to tasting schedules and winery locations allows for ease of planning that romantic trip, girls' weekend or bachelor party. Serious wine drinkers appreciate the organization to plan their best and most efficient wine tasting days. Wineries love the online bookings and connection to their visitors.</p> 
+    <div class=".center">
+      <b style="text-align:center; font-size:22px; margin-left:20px" ><i> View our wineries and plan your tasting adventure...</i></b>
+      <b style="text-align:center; margin-left:200px; font-size: 22px"><i>into wine country</i></b>  
+      <br> 
+      <br>
+    </div>
     <div id="vue-app">
-      <!--       <a href="/#/signup">Signup</a>
+      <a href="/#/signup">Signup</a>
       <a href="/#/login">Login</a>
-      <a href="/#/logout">Logout</a> -->
+      <a href="/#/logout">Logout</a> 
+
       <router-view></router-view>
     </div>
   </div>
@@ -319,34 +372,37 @@
 <template id="users-show">
   <div class="vue-component">
 
-    <h1>{{message}}</h1>
+    <h3 class="text-primary font-weight-bold" style=font color="black">My Profile </h3>
     <div>
-      <h2> User name: {{ user.name }}</h2>
-      <p> User email: {{ user.email }}</p>
-      <p> User phone number: {{ user.phone_number }} </p>
-       <a v-bind:href="'/#/users/' + user.id + '/edit'">Edit</a>
+      <h4 class="op-8 text-md"> Name: {{ user.name }}</h4>
+
+      <p class="op-8 text-sm"> Email: {{ user.email }}</p>
+      <p class="op-8 text-sm"> Phone number: {{ user.phone_number }} </p>
+
+    <button><a v-bind:href="'/#/users/' + user.id + '/edit'">Update My Profile</a> </button>
        <br>
        <br> 
 
-      <h2>Appointments scheduled for this user:</h2>
+      <h3 class="text-primary font-weight-bold"> My Scheduled Tastings: </h3>
       <div v-for="appointment in user.appointments">
  
-        <p>Winery: {{ appointment.winery_id }}</p>
-        <p> Winery name: {{ appointment.winery_name }}</p>
-        <p>Tasting info: {{ appointment.appt_date }}</p>
+       <!--  <p>Winery: {{ appointment.winery_id }}</p> -->
+        <h4 class="op-8 text-md"> Winery: {{ appointment.winery_name }}</h4>
+        <p class="op-8 text-sm">Tasting appointment: {{ appointment.appt_date }}</p>
 
         <div class="form-group">
-          <label>Change Date and/or Time:</label> 
+          <label class="op-8 text-sm">Change Date and/or Time:</label> 
           <input type="datetime-local" class="form-control" v-model="appt_date">
 
           <button class="btn btn-primary" v-on:click="submit(appointment)">Update Tasting Appointment</button>
           <br>
-          <br>
+        
         </div>
-
-        <button
+      
+        <button class="btn btn-primary"
        v-on:click="deleteAppointment(appointment)">Cancel this appointment</button>
- 
+       <br>
+       <br>
       </div>
   </div>
 </template>
