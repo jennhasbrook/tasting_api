@@ -50,33 +50,24 @@
             <div class="header-block-flex order-1 mr-auto">
               <nav class="nav nav-sm header-block-flex">
               </nav>
-              <div class="header-divider header-divider-sm">
-              </div>
+           
               <!--language menu-->
-              <div class="dropdown dropdowns-no-carets">
-                <a href="#en" class="nav-link text-xs p-0 dropdown-toggle ml-1" data-toggle="dropdown"><i class="flag-icon flag-icon-gb"></i></a>
-
-              </div>
+          
             </div>
             <!--social media icons-->
-            <div class="nav nav-icons header-block order-12">
-              <!--@todo: replace with company social media details-->
-              <a href="#" class="nav-link"> <i class="fab fa-twitter-square icon-1x"></i> <span class="sr-only">Twitter</span> </a>
-              <a href="#" class="nav-link"> <i class="fab fa-facebook-square icon-1x"></i> <span class="sr-only">Facebook</span> </a>
-              <a href="#" class="nav-link"> <i class="fab fa-google-plus-square icon-1x"></i> <span class="sr-only">Google plus</span> </a>
-            </div>
+     
           </div>
         </div>
         <div data-toggle="sticky">
 
           <!--Header search region - hidden by default -->
-        <!--   <div class="header-search collapse" id="search">
+          <div class="header-search collapse" id="search">
             <form class="search-form container">
               <input type="text" name="search" class="form-control search" value="" placeholder="Search">
               <button type="button" class="btn btn-link"><span class="sr-only">Search </span><i class="fa fa-search fa-flip-horizontal search-icon"></i></button>
               <button type="button" class="btn btn-link close-btn" data-toggle="search-form-close"><span class="sr-only">Close </span><i class="fa fa-times search-icon"></i></button>
             </form>
-          </div> -->
+          </div>
 
           <!--Header & Branding region-->
           <div class="header">
@@ -118,7 +109,7 @@
                       <a href="/#/signup" class="nav-link" id="pages-drop"  >Signup</a>
                     </li>
                     <li v-if="isLoggedIn()" class="nav-item">
-                      <a href="'/#/users/'+ user.id" class="nav-link" id="pages-drop"  >My Info</a>
+                      <a v-bind:href="'/#/users/'+ getUserId()" class="nav-link" id="pages-drop"  >My Info</a>
                     </li>
                   </ul>
                 </div>
@@ -140,7 +131,7 @@
 
 
 
-  <!-- ======== @Region: #footer ======== -->
+  
 
    <footer id="footer" class="p-0">
     <div class="container pt-6 pb-5">
@@ -186,7 +177,7 @@
           </span>
               <span class="fa-stack">
               <i class="fa fa-circle-thin fa-stack-2x"></i>
-              <i class="fa fa-twitter fa-stack-1x">       </i>
+              <i class="fa fa-twitter fa-stack-1x"> </i>
             </span>   
            <span class="fa-stack">
               <i class="fa fa-facebook"></i>
@@ -294,27 +285,20 @@
                <!--Project item 4-->
             <a href="https://otis-storage.s3.amazonaws.com/media/up/44/dc79859d6eddbee608754c97a803cf68_AnkenyVineyard.jpg" class="project overlay-hover">
             <img src="https://otis-storage.s3.amazonaws.com/media/up/44/dc79859d6eddbee608754c97a803cf68_AnkenyVineyard.jpg" alt="Winery 4"  class="img-fluid" />
-            <span class="overlay-hover-content"> <i class="fa fa-arrow-circle-right icon-3x text-white"></i> <span class="h5 mt-4">Ankenny Vineyard</span> </span> 
+            <span class="overlay-hover-content"> <i class="fa fa-arrow-circle-right icon-3x text-white"></i> <span class="h5 mt-4">Ankenny Vineyard</span> </span> </a>s
       </div>
     </div>
 
 
     <div>
-      <p><img src="https://images.unsplash.com/photo-1491924778227-f225b115dd5f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9cf2d396b2e5cb94bc449e2d91412ffe&auto=format&fit=crop&w=1350&q=80" alt="Photo of wineglasses and sunset" style="width:395px;height:276px" alt="A bunch of corks" align="left" hspace="40"> Historically, wineries required a visitor call to schedule a tasting. Who has time for that? Without tasting appointments, wine drinkers may often spend their valuable time waiting while others enjoy their wine. </p> 
-      <p> SIP allows users to schedule tasting appointments with wineries online and immediately. Access to tasting schedules and winery locations allows for ease of planning that romantic trip, girls' weekend or bachelor party. Serious wine drinkers appreciate the organization to plan their best and most efficient wine tasting days. Wineries love the online bookings and connection to their visitors.</p> 
+      <p><img src="https://images.unsplash.com/photo-1491924778227-f225b115dd5f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9cf2d396b2e5cb94bc449e2d91412ffe&auto=format&fit=crop&w=1350&q=80" alt="Photo of wineglasses and sunset" style="width:395px;height:276px" alt="A bunch of corks" align="left" hspace="40"> Historically, wineries required a visitor call to schedule a tasting. Who has time for that? Without tasting appointments, wine drinkers may often waste their valuable time. </p> 
+      <p> SIP allows users to schedule tasting appointments with wineries online. Access to tasting schedules and winery locations allows for ease of planning that romantic trip, girls' weekend or bachelor party. Serious wine drinkers appreciate planning their best and most efficient wine tasting. </p> 
         <div class=".center">
-        <b style="text-align:center; font-size:22px; margin-left:20px" ><i> View our wineries and plan your tasting adventure...</i></b>
-        <b style="text-align:center; margin-left:200px; font-size: 22px"><i>into wine country</i></b>  
+        <b style="text-align:center;" ><i> View our wineries and plan your tasting adventure...into wine country</i></b>
+        <!-- <b style="text-align:center;" ><i></i></b>  --> 
         <br> 
         <br>
-        </div>
-          <!--   <div id="vue-app">
-                  <a href="/#/signup">Signup</a>
-                  <a href="/#/login">Login</a>
-                  <a href="/#/logout">Logout</a> 
 
-                  <router-view></router-view>
-                </div> -->
     </div>
   </div> 
 </template>

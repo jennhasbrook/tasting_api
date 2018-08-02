@@ -269,6 +269,10 @@ var app = new Vue({
         return true;
       }
       return false;
+    },
+    getUserId: function() {
+      return localStorage.getItem("user_id")
     }
   }
+
 });
